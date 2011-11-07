@@ -1,34 +1,30 @@
 <?php
-/**
- * Application level Controller
- *
- * This file is application-wide controller file. You can put all
- * application-wide controller-related methods here.
- *
- * PHP versions 4 and 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       cake
- * @subpackage    cake.app
- * @since         CakePHP(tm) v 0.2.9
- * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
- */
+// file: /app/app_controller.php
 
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @package       cake
- * @subpackage    cake.app
- */
 class AppController extends Controller {
+	// class variables
+
+	var $helpers = array('Session','Form','Javascript','Facebook.Facebook','Wijmocake.Wijmo');
+	var $components = array(
+		'Session',
+		'Auth',
+		'Facebook.Connect',
+		'DebugKit.Toolbar');
+
+	/**
+	 * Before any Controller action
+	 */
+	function beforeFilter() {
+
+		$this->Auth->allow('index','view','display');
+
+		$this->set('user', $this->Auth->user());
+		$this->set('facebook_user', $this->Connect->user());
+
+		if (isset($this->params['prefix']) && $this->params['prefix'] == 'admin') {
+            $this->layout = 'admin';
+        } 
+	}
+
 }
+?> 

@@ -32,4 +32,4 @@
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/admin', array('controller' => 'pages', 'action' => 'index', 'admin' => true));
