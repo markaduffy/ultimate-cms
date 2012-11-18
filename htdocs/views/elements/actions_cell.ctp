@@ -1,0 +1,2 @@
+<a class="edit" href="/admin/<?php echo $this->params['controller']; ?>/edit/<?php echo $id ?>"><i class="icon-pencil"></i></a>
+<a class="delete" href="/admin/<?php echo $this->params['controller']; ?>/delete/<?php echo $id ?>"><i class="icon-trash"></i></a>

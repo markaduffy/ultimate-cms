@@ -1,0 +1,24 @@
+############ WIJMOCAKE - A jQuery UI cakephp helper plugin. ###############
+
+Tested in CakePHP1.3.x
+
+UPDATE: 11/18/2012
+
+v 0.3.1
+
+A little over a year later, Ive decided to update this plugin. Updated to wijmo open 2.3.1.
+
+UPDATE: 11/07/2011
+
+v0.3
+
+ - Pulled plugin out of demo cakephp app. Plugin can now be easily cloned to peoples cakephp applications.
+ - Helper now loads in dependencies inside helper. No need to add to layout.
+ - wijtooltip. Can pass tag,title and url for anchor or tag,title for others ie span,p etc
+
+ INSTALL
+
+ - git clone git@github.com:markaduffy/wijmocake.git wijmocake - to your websites plugin folder.
+ - Add var $helpers = array('Wijmocake.Wijmo') to your websites app_controller.php
+
+Mark Duffy markaduffy@gmail.com http://www.markaduffy.net
